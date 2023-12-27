@@ -1,0 +1,1 @@
+<h1>Thank you For Register.. {{$namemail}}</h1>
