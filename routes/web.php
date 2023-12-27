@@ -8,7 +8,7 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\employeeController;
 use App\Http\Controllers\categoryController;
 use App\Http\Controllers\productController;
-use App\Http\Controllers\feedbackController;
+
 
 
 /*
@@ -71,6 +71,7 @@ Route::get('/blade', function () {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+
 //Route::group(['middleware'=>['adminbeforelogin']],function(){
 
 Route::get('/admin_login',[adminController::class,'admin_login']);
@@ -129,44 +130,51 @@ Route::get('/manage_feed/{id}',[feedbackController::class,'destroy']);
 Route::get('/manage_cont',[contactController::class,'show']);
 Route::get('/manage_cont/{id}',[contactController::class,'destroy']);
 
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/**
+
+
 Route::get('/emp_login',[employeeController::class,'emp_login']);
-Route::post('/elogin_auth',[employeeController::class,'elogin_auth']);
+Route::post('/emplogin_auth',[employeeController::class,'emplogin_auth']);
+
+
+Route::get('/emplogout',[employeeController::class,'emplogout']);
+
 
 Route::get('/emp_dashboard', function () {
     return view('employee/emp_dashboard');
 });
 
-Route::get('/add_cate', function () {
-    return view('employee/add_cate');
-});
+Route::get('/add_cate',[categoryController::class,'create']);
+Route::post('/add_cate',[categoryController::class,'store']);
 
+Route::get('/manage_cate',[categoryController::class,'show']);
+Route::get('/manage_cate/{id}',[categoryController::class,'destroy']);
 
-Route::get('/manage_cate', function () {
-    return view('employee/manage_cate');
-});
+Route::get('/editcate/{id}',[categoryController::class,'edit']);
 
-Route::get('/add_prod', function () {
-    return view('employee/add_prod');
-});
+Route::post('/updatecate/{id}',[categoryController::class,'updatecate']);
 
-Route::get('/manage_prod', function () {
-    return view('employee/manage_prod');
-});
+Route::get('/add_prod',[productController::class,'create']);
+Route::post('/add_prod',[productController::class,'store']);
+
+Route::get('/manage_prod',[productController::class,'show']);
+Route::get('/manage_prod/{id}',[productController::class,'destroy']);
+
+Route::get('/editprod/{id}',[productController::class,'edit']);
+
+Route::post('/updateprod/{id}',[productController::class,'updateprod']);
 
 Route::get('/manage_cus',[customerController::class,'show']);
-Route::get('/manage_cus/{id}',[customerController::class,'destroy']);
+Route::get('/delete/{id}',[customerController::class,'destroy']);
 
-Route::get('/manage_feed', function () {
-    return view('employee/manage_feed');
-});
+Route::get('/manage_cus/{id}',[customerController::class,'status']);
 
-Route::get('/manage_cont', function () {
-    return view('employee/manage_cont');
-});
-**/
+
+Route::get('/manage_cont',[contactController::class,'show']);
+Route::get('/manage_cont/{id}',[contactController::class,'destroy']);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

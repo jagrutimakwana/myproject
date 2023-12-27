@@ -1,5 +1,8 @@
 @extends('employee.layout.structure')
 @section('main_container')
+
+                
+
         <div id="page-wrapper" >
             <div id="page-inner">
                 <div class="row">
@@ -12,8 +15,9 @@
                  <!-- /. ROW  -->
                  <hr />
                
+			   
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                   <!--   Kitchen Sink -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -29,16 +33,19 @@
                                             <th>Firstname</th>
 											<th>Lastname</th>
                                             <th>Email</th>
-											<th>Phone_no</th>
+											<th>Contact_no</th>
 											<th>Address</th>
+											<th>Gender</th>
+											<th>Languages</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         
-                                       @if(!empty($data_customers))
+                                       @if(!empty($data_customer))
                                            
-                                            @foreach($data_customers as $d)
+									   
+                                            @foreach($data_customer as $d)
                                                 <tr>
 												
                                                     <td>{{$d->id}}</td>
@@ -48,14 +55,19 @@
                                                     <td>{{$d->email}}</td>
 													<td>{{$d->mobile}}</td>
 													<td>{{$d->address}}</td>
+													<td>{{$d->gender}}</td>
+													<td>{{$d->languages}}</td>
                                                     
                                                       <td> 
-													  <a href="" class="btn btn-danger me-1"></a>
-                                                      <a href="" class="btn btn-primary me-1">Delete</a>
+													  <a href="{{url('/manage_cus/'.$d->id)}}" class="btn btn-success me-1">{{$d->status}}</a>
+													  
+                                                      <a href="{{url('/delete/'.$d->id)}}" class="btn btn-primary me-1">Delete</a>
 														
                                                     </td>
                                                 </tr>
                                                  @endforeach
+												 
+												
 												
 												@else
 													
@@ -65,7 +77,9 @@
 													@endif
                                     </tbody>
                                 </table>
-                            </div>
+								
+															
+								</div>
                         </div>
                     </div>
                      <!-- End  Kitchen Sink -->
@@ -80,3 +94,4 @@
          <!-- /. PAGE WRAPPER  -->
      
 @endsection
+

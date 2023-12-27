@@ -3,7 +3,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Free Bootstrap Employee Template : Binary Employee</title>
+    <title>Free Bootstrap Admin Template : Employee</title>
 	<!-- BOOTSTRAP STYLES-->
     <link href="{{url('employee/assets/css/bootstrap.css')}}" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
@@ -14,6 +14,26 @@
     <link href="{{url('employee/assets/css/custom.css')}}" rel="stylesheet" />
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   
+   
+   
+   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<!--
+2 Include these two files 
+-->
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css')}}">
+
+<!--
+3 Call this single function 
+-->
+<script>
+	$(document).ready(function() 
+	{
+		$('#table').DataTable();
+	} );
+</script>
 </head>
 <body>
  @include('sweetalert::alert')
@@ -26,12 +46,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index">Employee</a> 
+                <a class="navbar-brand" href="index">Employee </a> 
             </div>
   <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="emplogout" class="btn btn-danger square-btn-adjust">Logout</a> </div>
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
@@ -43,7 +63,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
 				
 					
                     <li>
-                        <a class="active-menu"  href="emp_dashboard"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                        <a class="active-menu"  href="dashboard"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-desktop"></i>Category <span class="fa arrow"></span></a>
@@ -55,9 +75,8 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
 						<a href="manage_cate"><i class="fa fa-table"></i>Manage Category</a>
 						</li>
 						</ul>
-					</li>
-
-                   <li>
+					    </li>
+						<li>
                         <a href="#"><i class="fa fa-shopping-cart"></i>Products <span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
 						<li>
@@ -70,9 +89,6 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
 					</li>
 					<li>
                         <a href="manage_cus"><i class="fa fa-user"></i>Customer</a>
-					</li>
-					<li>
-                        <a href="manage_feed"><i class="fa fa-user"></i>Feedback</a>
 					</li>
 					
 					<li>

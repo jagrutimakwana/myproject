@@ -13,7 +13,7 @@
                  <hr />
                
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                   <!--   Kitchen Sink -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -24,25 +24,27 @@
                                 <table id="table" class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Contact_id</th>
-                                            <th>Name</th>
+                                            <th>Contact Id</th>
+                                            <th>Contact Name</th>
+											<th>Contact No</th>
                                             <th>Email</th>
                                             <th>Message</th>
 											<th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      @if(!empty($data_contacts))
+                                      @if(!empty($data_contact))
                                            
-                                            @foreach($data_contacts as $d)
+                                            @foreach($data_contact as $d)
                                                 <tr>
-                                                    <td>{{$d->contact_id}}</td>
-													<td>{{$d->name}}</td>
+                                                    <td>{{$d->id}}</td>
+													<td>{{$d->contact_name}}</td>
+													<td>{{$d->mobile_no}}</td>
                                                     <td>{{$d->email}}</td>
                                                     <td>{{$d->message}}</td>
 													
                                                     <td>
-                                                       <a href="" class="btn btn-danger me-1">Delete</a>
+                                                       <a href="{{url('/manage_cont/'.$d->id)}}" class="btn btn-danger me-1">Delete</a>
                                                         
                                                     </td>
                                                 </tr>

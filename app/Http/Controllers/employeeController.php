@@ -25,7 +25,7 @@ class employeeController extends Controller
         return view('employee/emp_login');
     }
 	
-	function elogin_auth(Request $request)
+	function emplogin_auth(Request $request)
     {
         $data=employee::where('emp_name','=',$request->emp_name)->first();
 		if($data)
@@ -52,6 +52,16 @@ class employeeController extends Controller
 			    Alert::error('Failed', 'Wrong Email');
 				return redirect()->back();
 		}
+    }
+	
+	function emplogout()
+    {
+        // session delete
+		session()->pull('id');
+		session()->pull('firstname');
+		Alert::success('Congrats', 'You\'ve Successfully Logout');
+		return redirect('emp_login');
+		
     }
     /**
      * Show the form for creating a new resource.

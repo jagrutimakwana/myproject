@@ -13,7 +13,7 @@
                  <hr />
                
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                   <!--   Kitchen Sink -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -36,21 +36,21 @@
                                     </thead>
                                     <tbody>
                                         
-                                        @if(!empty($data_products))
+                                        @if(!empty($data_product))
                                            
-                                            @foreach($data_products as $d)
+                                            @foreach($data_product as $d)
                                                 <tr>
-                                                    <td>{{$d->product_id}}</td>
-													<td>{{$d->category_id}}</td>
+                                                    <td>{{$d->id}}</td>
+													<td>{{$d->cate_id}}</td>
                                                     <td>{{$d->product_name}}</td>
-                                                    <td><img src="" width="50px"></td>
+                                                    <td><img src="{{url('/upload/product/'.$d->file)}}" width="50px"></td>
 													<td>{{$d->main_price}}</td>
 													<td>{{$d->dis_price}}</td>
                                                     <td>{{$d->description}}</td>
                                                     <td>
                                                        
-                                                        <a href="" class="btn btn-danger me-1">Edit</a>
-                                                        <a href="" class="btn btn-primary me-1">Delete</a>
+                                                        <a href="{{url('/editprod/'.$d->id)}}" class="btn btn-danger me-1">Edit</a>
+                                                        <a href="{{url('/manage_prod/'.$d->id)}}" class="btn btn-primary me-1">Delete</a>
 														
                                                     </td>
                                                 </tr>

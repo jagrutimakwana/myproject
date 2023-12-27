@@ -1,6 +1,4 @@
-﻿
-
-<!DOCTYPE php>
+﻿<!DOCTYPE php>
 <php xmlns="http://www.w3.org/1999/xphp">
 <head>
       <meta charset="utf-8" />
@@ -27,10 +25,10 @@
                 <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                            
                             <div class="panel-body">
-                                <form action="{{url('/elogin_auth')}}" method="post" role="form">
+                                <form action="{{url('/emplogin_auth')}}" method="post" role="form">
 								@csrf
                                     <hr />
-                                    <h5>Enter Details to Login</h5>
+                                    <h5>Enter Employee Details to Login</h5>
                                        <br />
                                      <div class="form-group input-group">
                                             <span class="input-group-addon"><i class="fa fa-tag"></i></span>
@@ -49,7 +47,7 @@
                                             </span>
                                         </div>
                                      
-                                     <input type="submit" name="submit" class="btn btn-primary">
+                                     <input type="submit" name="submit" value="Login" class="btn btn-primary">
                                     
                                     
                                     </form>
